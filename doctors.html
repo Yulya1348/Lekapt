@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekapt</title>
+
+  <link rel="preload" href="fonts/Montserrat-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Italic.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="libs/bootstrap.min.css"> 
+  <link rel="stylesheet" href="libs/swiper-bundle.min.css">
+  <link rel="stylesheet" href="libs/choices.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/bootstrap.min.js"></script>
+  <script defer src="js/doctors_script.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/modal.js"></script>
+</head>
+<body id="scroll">
+  <header class="header">
+    <div class="header-up container">
+      <div class="header-up__left">
+        <a class="header-up__logo" href="#" aria-label="Логотип">
+          <img src="img/logo.png" alt="Логотип">
+        </a>
+        <nav class="header-up__nav">
+          <ul class="header-up__list">
+            <li class="header-up__item"><a class="header-up__link" href="category.html">Лекарства</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="doctors.html">Врачи</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="clinic.html">Клиники</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="all.html">Все&nbsp;аптеки</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="contacts.html">Контакты</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="delivery.html">Доставка</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="promo.html">Дисконт</a></li>
+            <li class="header-up__item"><a class="header-up__link" href="blog.html">Блог</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-up__right">
+        <div class="header-up__location">
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 11C22 16.5228 12 24 12 24C12 24 2 16.5228 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="#019B83"/>
+            <circle cx="12" cy="11" r="3" stroke="#019B83"/>
+          </svg>
+          <button class="header-up__location-txt" id="btn__city">Москва</button>
+        </div>
+        <ul class="header-up__social-list">
+          <li class="header-up__social-item">
+            <a class="header-up__icon" href="#" aria-label="Ссылка на чат в Телеграм">
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.1127 24.0419C18.7517 24.0419 24.1337 18.6599 24.1337 12.021C24.1337 5.38197 18.7517 0 12.1127 0C5.47377 0 0.0917969 5.38197 0.0917969 12.021C0.0917969 18.6599 5.47377 24.0419 12.1127 24.0419Z" fill="#34AADF"/>
+                <path d="M5.24534 11.7577C5.24534 11.7577 11.1999 9.22441 13.2651 8.33238C14.0567 7.9756 16.7414 6.8338 16.7414 6.8338C16.7414 6.8338 17.9805 6.33431 17.8773 7.54741C17.8428 8.04696 17.5675 9.79526 17.2922 11.6863C16.8791 14.3624 16.4316 17.2881 16.4316 17.2881C16.4316 17.2881 16.3628 18.1088 15.7777 18.2515C15.1926 18.3942 14.2288 17.752 14.0567 17.6092C13.919 17.5022 11.4753 15.8966 10.5804 15.1116C10.3394 14.8976 10.0641 14.4694 10.6147 13.9699C11.8539 12.7924 13.3339 11.3295 14.2288 10.4019C14.6418 9.97368 15.0549 8.97464 13.3339 10.1877C10.8901 11.9361 8.48077 13.5774 8.48077 13.5774C8.48077 13.5774 7.93005 13.9342 6.89748 13.613C5.86486 13.292 4.66018 12.8638 4.66018 12.8638C4.66018 12.8638 3.83416 12.3286 5.24534 11.7577Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li class="header-up__social-item">
+            <a class="header-up__icon" href="#" aria-label="Ссылка на чат What's app">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 22L1.57845 16.1362C0.305469 13.8519 -0.0989689 11.1864 0.439349 8.62866C0.977667 6.07097 2.42263 3.79269 4.50909 2.2119C6.59555 0.631107 9.18355 -0.146167 11.7982 0.0227092C14.4128 0.191585 16.8787 1.29528 18.7434 3.13127C20.608 4.96726 21.7463 7.41239 21.9495 10.018C22.1526 12.6236 21.4069 15.2148 19.8492 17.3162C18.2915 19.4177 16.0263 20.8883 13.4693 21.4583C10.9122 22.0283 8.23488 21.6594 5.92851 20.4194L0 22ZM6.21437 18.2251L6.58102 18.442C8.25157 19.4297 10.2027 19.8384 12.1305 19.6045C14.0582 19.3705 15.8542 18.5071 17.2387 17.1487C18.6231 15.7904 19.5181 14.0133 19.7843 12.0946C20.0505 10.1759 19.6728 8.22321 18.7102 6.5409C17.7477 4.85859 16.2542 3.54114 14.4626 2.79385C12.671 2.04657 10.6818 1.91143 8.80516 2.40949C6.9285 2.90755 5.26973 4.01084 4.08734 5.54742C2.90495 7.084 2.26536 8.96756 2.26824 10.9046C2.26667 12.5107 2.71199 14.0857 3.55462 15.4543L3.78455 15.8324L2.90211 19.1053L6.21437 18.2251Z" fill="#00D95F"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1124 12.4564C14.8975 12.2835 14.6458 12.1618 14.3766 12.1006C14.1074 12.0393 13.8277 12.0402 13.5589 12.1031C13.1549 12.2705 12.8939 12.9027 12.6329 13.2188C12.5779 13.2946 12.497 13.3478 12.4055 13.3683C12.3139 13.3889 12.218 13.3754 12.1358 13.3304C10.657 12.7527 9.41739 11.6932 8.61843 10.3241C8.55029 10.2387 8.51804 10.1302 8.52847 10.0215C8.5389 9.91284 8.5912 9.81243 8.67436 9.74145C8.96547 9.454 9.1792 9.09797 9.2958 8.70629C9.32169 8.27426 9.22246 7.84391 9.00994 7.46658C8.84564 6.93756 8.53297 6.46651 8.10886 6.10909C7.89011 6.01096 7.64757 5.97805 7.41049 6.01435C7.17342 6.05065 6.95194 6.15459 6.77277 6.31364C6.46172 6.58132 6.21483 6.91519 6.05028 7.29065C5.88573 7.66612 5.80771 8.07362 5.82197 8.48314C5.82293 8.71311 5.85215 8.9421 5.90897 9.16498C6.05327 9.70048 6.27519 10.2121 6.56769 10.6836C6.77873 11.0448 7.00899 11.3945 7.25749 11.7312C8.06507 12.837 9.08023 13.7759 10.2466 14.4957C10.8319 14.8616 11.4574 15.159 12.1109 15.3821C12.7897 15.6891 13.5392 15.8069 14.2797 15.7231C14.7017 15.6594 15.1014 15.4932 15.4439 15.2392C15.7863 14.9852 16.0609 14.6511 16.2435 14.2664C16.3507 14.034 16.3833 13.7742 16.3367 13.5226C16.2248 13.0081 15.535 12.7044 15.1124 12.4564Z" fill="#00D95F"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="header-up__login-list">
+          <a href="account.html" class="header-up__login header-up__login-one" aria-label="Войти в личный кабинет">Вход</a>
+          <a href="account.html" class="header-up__reg" aria-label="Зарегистрироваться">Регистрация</a>
+        </div>
+      </div>
+    </div>
+    <div class="header-down" id="menubar">
+      <div class="header-down__content container sticky">
+        <button class="header-down__burger" aria-label="Открыть каталог">
+          Каталог
+          <span class="header-down__burger-line"></span>
+        </button>
+        <div id="wrap-menu" class="header-down__wrap-menu">
+          <div class="header-down__burger-menu">
+            <button class="header-down__burger-close">
+              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.25 6L19.5565 18.7742" stroke="#2B2A28" stroke-linejoin="round"/>
+                <path d="M6.25 18.7744L19.5565 6.00022" stroke="#2B2A28" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <nav class="header-down__burger-nav">
+              <ul class="section-hero__list">
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Акушерство. Гинекология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Аллергология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Анальгетики-антипиретики</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Анестезиология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">БАД</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Гематология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Гемостаз</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">ГКС</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Диагностические средства</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Иммунология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Кардиология. Ангиология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Косметика</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <form class="header-down__form" action="#" autocomplete="off">
+          <input class="header-down__form-input" type="text" aria-label="Введите запрос" placeholder="Название лекарства или симптомы, например Аспирин, Анальгин...">
+          <button class="header-down__form-btn" type="submit" aria-label="Начать поиск">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="white"/>
+              <path d="M21.9999 21.9999L18.7822 18.7822" stroke="white"/>
+            </svg>
+          </button>
+        </form>
+        <div class="header-down__right">
+          <div class="header-down__phone">
+            <button class="header-down__phone-btn">
+              <svg class="header-down__phone-icon" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15.5" r="15" fill="#019B83"/>
+                <g clip-path="url(#clip0_351_907)">
+                <path d="M13.797 16.7028C12.4608 15.3665 12.159 14.0302 12.091 13.4949C12.072 13.3468 12.1229 13.1984 12.2288 13.0932L13.3102 12.0123C13.4693 11.8533 13.4975 11.6056 13.3783 11.4149L11.6565 8.74138C11.5246 8.53024 11.2537 8.45403 11.0311 8.56542L8.26705 9.86718C8.087 9.95584 7.98109 10.1471 8.00153 10.3468C8.14636 11.7227 8.74619 15.1049 12.07 18.4289C15.3938 21.7529 18.7755 22.3525 20.1521 22.4973C20.3517 22.5178 20.543 22.4119 20.6317 22.2318L21.9335 19.4678C22.0444 19.2456 21.9687 18.9755 21.7585 18.8434L19.0849 17.1221C18.8944 17.0027 18.6466 17.0307 18.4875 17.1897L17.4066 18.271C17.3015 18.3769 17.153 18.4279 17.005 18.4089C16.4696 18.3408 15.1333 18.0391 13.797 16.7028Z" fill="white"/>
+                <path d="M19.1028 15.9828C18.8362 15.9828 18.62 15.7667 18.62 15.5C18.6178 13.5013 16.9981 11.8816 14.9994 11.8793C14.7327 11.8793 14.5166 11.6632 14.5166 11.3966C14.5166 11.13 14.7327 10.9138 14.9994 10.9138C17.5311 10.9166 19.5828 12.9683 19.5856 15.5C19.5856 15.7667 19.3694 15.9828 19.1028 15.9828Z" fill="white"/>
+                <path d="M21.5166 15.9828C21.25 15.9828 21.0339 15.7666 21.0339 15.5C21.0301 12.1688 18.3306 9.46924 14.9994 9.46552C14.7327 9.46552 14.5166 9.24938 14.5166 8.98276C14.5166 8.71614 14.7327 8.5 14.9994 8.5C18.8636 8.50426 21.9951 11.6358 21.9994 15.5C21.9994 15.628 21.9485 15.7508 21.858 15.8414C21.7675 15.9319 21.6447 15.9828 21.5166 15.9828Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_351_907">
+                <rect width="14" height="14" fill="white" transform="translate(8 8.5)"/>
+                </clipPath>
+                </defs>
+              </svg>
+              +7 (000) 000-00-00
+            </button>
+          </div>
+          <div class="header-down__icons">
+            <button class="header-down__btn header-down__btn-one">
+              <span class="header-down__icon">
+                <span class="header-down__plus">0</span>
+                <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.27216 2.77216C-0.0907199 5.13503 -0.090718 8.96602 2.27216 11.3289L11.437 20.4937L11.5 20.4307L11.5631 20.4938L20.7279 11.329C23.0908 8.96609 23.0908 5.13511 20.7279 2.77223C18.365 0.409358 14.534 0.40936 12.1712 2.77224L11.8536 3.08978C11.6584 3.28505 11.3418 3.28505 11.1465 3.08978L10.8289 2.77216C8.46601 0.409281 4.63503 0.409282 2.27216 2.77216Z" stroke="#2B2A28"/>
+                </svg>
+              </span>
+              Избранное
+            </button>
+            <button class="header-down__btn">
+              <span class="header-down__icon">
+                <span class="header-down__plus">0</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.49594 23.28L4.31166 6.7207H20.659L21.4747 23.28H3.49594Z" stroke="#2B2A28"/>
+                  <path d="M8.16016 10.1491L8.16016 5.55139C8.16016 4.40438 8.61581 3.30434 9.42687 2.49328C10.2379 1.68221 11.338 1.22656 12.485 1.22656C13.632 1.22656 14.732 1.68221 15.5431 2.49328C16.3542 3.30434 16.8098 4.40438 16.8098 5.55139V10.1491" stroke="#2B2A28"/>
+                </svg>
+              </span>
+              Корзина
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-mobile container" id="menubar-mob">
+      <div class="header-mobile__burger-top">
+        <a class="header-up__logo" href="#" aria-label="Логотип">
+          <img src="img/logo.png" alt="Логотип">
+        </a>
+        <div class="header-down__phone">
+          <button class="header-down__phone-btn">
+            <svg class="header-down__phone-icon" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="15" cy="15.5" r="15" fill="#019B83"/>
+              <g clip-path="url(#clip0_351_907)">
+              <path d="M13.797 16.7028C12.4608 15.3665 12.159 14.0302 12.091 13.4949C12.072 13.3468 12.1229 13.1984 12.2288 13.0932L13.3102 12.0123C13.4693 11.8533 13.4975 11.6056 13.3783 11.4149L11.6565 8.74138C11.5246 8.53024 11.2537 8.45403 11.0311 8.56542L8.26705 9.86718C8.087 9.95584 7.98109 10.1471 8.00153 10.3468C8.14636 11.7227 8.74619 15.1049 12.07 18.4289C15.3938 21.7529 18.7755 22.3525 20.1521 22.4973C20.3517 22.5178 20.543 22.4119 20.6317 22.2318L21.9335 19.4678C22.0444 19.2456 21.9687 18.9755 21.7585 18.8434L19.0849 17.1221C18.8944 17.0027 18.6466 17.0307 18.4875 17.1897L17.4066 18.271C17.3015 18.3769 17.153 18.4279 17.005 18.4089C16.4696 18.3408 15.1333 18.0391 13.797 16.7028Z" fill="white"/>
+              <path d="M19.1028 15.9828C18.8362 15.9828 18.62 15.7667 18.62 15.5C18.6178 13.5013 16.9981 11.8816 14.9994 11.8793C14.7327 11.8793 14.5166 11.6632 14.5166 11.3966C14.5166 11.13 14.7327 10.9138 14.9994 10.9138C17.5311 10.9166 19.5828 12.9683 19.5856 15.5C19.5856 15.7667 19.3694 15.9828 19.1028 15.9828Z" fill="white"/>
+              <path d="M21.5166 15.9828C21.25 15.9828 21.0339 15.7666 21.0339 15.5C21.0301 12.1688 18.3306 9.46924 14.9994 9.46552C14.7327 9.46552 14.5166 9.24938 14.5166 8.98276C14.5166 8.71614 14.7327 8.5 14.9994 8.5C18.8636 8.50426 21.9951 11.6358 21.9994 15.5C21.9994 15.628 21.9485 15.7508 21.858 15.8414C21.7675 15.9319 21.6447 15.9828 21.5166 15.9828Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_351_907">
+              <rect width="14" height="14" fill="white" transform="translate(8 8.5)"/>
+              </clipPath>
+              </defs>
+            </svg>
+            +7 (000) 000-00-00
+          </button>
+        </div>
+      </div>
+      <div class="header-mobile__bottom" >
+        <div class="header-mobile__form-container">
+          <button class="header-mobile__form-bottom__btn" type="submit" aria-label="Начать поиск">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="#636363"/>
+              <path d="M22 21.9999L18.7823 18.7822" stroke="#636363"/>
+            </svg>
+          </button>
+          <form class="header-mobile__form-botimgtom" action="#" autocomplete="off">
+            <input class="header-mobile__form-bottom__input" type="text" aria-label="Введите запрос" placeholder="Искать на Lekapt">
+          </form>
+        </div>
+        <button class="header-mobile__burger" aria-label="Открыть или закрыть меню">
+          <span class="header-mobile__burger-line"></span>
+        </button>
+        <div class="header-mobile__burger-menu">
+          <button class="header-mobile__burger-close">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.25 6L19.5565 18.7742" stroke="#2B2A28" stroke-linejoin="round"/>
+              <path d="M6.25 18.7744L19.5565 6.00022" stroke="#2B2A28" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <nav class="header-mobile__burger-nav">
+            <div class="header-mobile__burger-top">
+              <a class="header-up__logo" href="#" aria-label="Логотип">
+                <img src="img/logo.png" alt="Логотип">
+              </a>
+              <div class="header-down__phone">
+                <button class="header-down__phone-btn">
+                  <svg class="header-down__phone-icon" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15.5" r="15" fill="#019B83"/>
+                    <g clip-path="url(#clip0_351_907)">
+                    <path d="M13.797 16.7028C12.4608 15.3665 12.159 14.0302 12.091 13.4949C12.072 13.3468 12.1229 13.1984 12.2288 13.0932L13.3102 12.0123C13.4693 11.8533 13.4975 11.6056 13.3783 11.4149L11.6565 8.74138C11.5246 8.53024 11.2537 8.45403 11.0311 8.56542L8.26705 9.86718C8.087 9.95584 7.98109 10.1471 8.00153 10.3468C8.14636 11.7227 8.74619 15.1049 12.07 18.4289C15.3938 21.7529 18.7755 22.3525 20.1521 22.4973C20.3517 22.5178 20.543 22.4119 20.6317 22.2318L21.9335 19.4678C22.0444 19.2456 21.9687 18.9755 21.7585 18.8434L19.0849 17.1221C18.8944 17.0027 18.6466 17.0307 18.4875 17.1897L17.4066 18.271C17.3015 18.3769 17.153 18.4279 17.005 18.4089C16.4696 18.3408 15.1333 18.0391 13.797 16.7028Z" fill="white"/>
+                    <path d="M19.1028 15.9828C18.8362 15.9828 18.62 15.7667 18.62 15.5C18.6178 13.5013 16.9981 11.8816 14.9994 11.8793C14.7327 11.8793 14.5166 11.6632 14.5166 11.3966C14.5166 11.13 14.7327 10.9138 14.9994 10.9138C17.5311 10.9166 19.5828 12.9683 19.5856 15.5C19.5856 15.7667 19.3694 15.9828 19.1028 15.9828Z" fill="white"/>
+                    <path d="M21.5166 15.9828C21.25 15.9828 21.0339 15.7666 21.0339 15.5C21.0301 12.1688 18.3306 9.46924 14.9994 9.46552C14.7327 9.46552 14.5166 9.24938 14.5166 8.98276C14.5166 8.71614 14.7327 8.5 14.9994 8.5C18.8636 8.50426 21.9951 11.6358 21.9994 15.5C21.9994 15.628 21.9485 15.7508 21.858 15.8414C21.7675 15.9319 21.6447 15.9828 21.5166 15.9828Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_351_907">
+                    <rect width="14" height="14" fill="white" transform="translate(8 8.5)"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+                  +7 (000) 000-00-00
+                </button>
+              </div>
+            </div>
+            <ul class="header-mobile__list">
+              <li class="header-mobile__item"><a class="header-mobile__link" href="#">Геолокация</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="delivery.html">Доставка</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="contacts.html">Контакты</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="#">Дисконт</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="all.html">Все аптеки</a></li>
+              <li class="header-mobile__item"><a class="header-mobile__link" href="blog.html">Блог</a></li>
+            </ul>
+            <div class="header-mobile__burger-bottom">
+              <h2 class="burger-heading heading-h2">Каталог</h2>
+              <ul class="section-hero__list">
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Акушерство. Гинекология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Аллергология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Анальгетики-антипиретики</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Анестезиология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">БАД</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Гематология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Гемостаз</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">ГКС</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Диагностические средства</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Иммунология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Кардиология. Ангиология</a></li>
+                <li class="section-hero__item"><a class="section-hero__link" href="#">Косметика</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="modal container" id="modal__city">
+      <div class="modal__box">
+        <button class="modal__close-btn" id="close-city-btn">
+          <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.25 6L19.5565 18.7742" stroke="#2B2A28" stroke-linejoin="round"/>
+            <path d="M6.25 18.7744L19.5565 6.00022" stroke="#2B2A28" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="modal-cont">
+          <div class="modal-left"> 
+            <h2 class="modal-heading heading-h2">Выберите город</h2>
+            <span class="modal-subtitle">Регион</span>
+            <ul class="modal__left-list">
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Алтай</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Амурская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Архангельская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Астраханская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Белгородская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Брянская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Бурятия</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Владимирская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Волгоградская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Вологодская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Воронежская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Горный Алтай</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Алтай</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Амурская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Архангельская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Астраханская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Белгородская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Брянская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Бурятия</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Владимирская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Волгоградская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Вологодская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Воронежская область</a></li>
+              <li class="modal__left-item"><a class="modal__left-link" href="#">Горный Алтай</a></li>
+            </ul>
+          </div>
+          <div class="modal-right">
+            <ul class="modal-right__top-list">
+              <li class="modal-right__top-item"><a class="modal-right__top-link" href="#">Москва</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__top-link" href="#">Санкт-Петербург</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__top-link" href="#">Новосибирск</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__top-link" href="#">Клинцы</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__top-link" href="#">Новозыбков</a></li>
+            </ul>
+            <form class="modal-right__form" action="#" autocomplete="off">
+              <input class="modal-right__form-input" type="text" aria-label="Введите запрос" placeholder="Введите название города...">
+              <button class="modal-right__form-btn" type="submit" aria-label="Начать поиск">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="#00705E"/>
+                  <path d="M22.0009 21.9999L18.7832 18.7822" stroke="#00705E"/>
+                </svg>
+              </button>
+            </form>
+            <ul class="modal-right__bottom-list">
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Брянск</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Брянск</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Брянск</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Брянск</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Дятьково</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Дятьково</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Дятьково</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Дятьково</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Клинцы</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Клинцы</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Клинцы</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Клинцы</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Новозыбков</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Новозыбков</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Новозыбков</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Новозыбков</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Унеча</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Унеча</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Унеча</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Унеча</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Бытошь</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Бытошь</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Бытошь</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Бытошь</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Выгоничи</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Выгоничи</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Выгоничи</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Выгоничи</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Глинищево</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Глинищево</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Глинищево</a></li>
+              <li class="modal-right__top-item"><a class="modal-right__bottom-link" href="#">Глинищево</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section-doctors container">
+      <ul class="section-card__breadcrumb">
+        <li class="section-card__breadcrumb-item"><a class="section-card__breadcrumb-link" href="index.html">Главная</a></li>
+        <li class="section-card__breadcrumb-item active">Врачи Москвы</li>
+      </ul>
+      <div class="section-doctors__content">
+        <div class="section-doctors__left">
+          <div class="section-doctors__heading-top">
+            <h2 class="section-doctors__heading">Частные врачи в Москве</h2>
+            <a class="section-doctors__link" href="#">Смотреть клиники в Москве
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.2832 5.5L21.0003 12.5L14.2832 19.5" stroke="#F96D15"/>
+                <line x1="20.6279" y1="12.6089" x2="2.89487" y2="12.6089" stroke="#F96D15"/>
+              </svg>
+            </a>
+          </div>
+          <div class="section-doctors__filter">
+            <form class="section-doctors__form" action="#" autocomplete="off">
+              <button class="section-doctors__form-btn" type="submit" aria-label="Начать поиск">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z" stroke="#636363"/>
+                  <path d="M22.0009 21.9999L18.7832 18.7822" stroke="#636363"/>
+                </svg>
+              </button>
+              <input class="section-doctors__form-input" type="text" aria-label="Введите запрос" placeholder="Какого специалиста вы ищите?">
+            </form>
+            <button class="section-doctors__location-btn" aria-label="Выберете город">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11C22 16.5228 12 24 12 24C12 24 2 16.5228 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="#636363"/>
+                <circle cx="12" cy="11" r="3" stroke="#636363"/>
+              </svg>
+              Москва
+            </button>
+            <button class="section-doctors__btn-filter" aria-label="Применить фильтры">
+              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 7.5V8.5H21.5V7.5H3.5ZM10.5 16.5H14.5V15.5H10.5V16.5ZM18.5 12.5H6.5V11.5H18.5V12.5Z" fill="#F96D15"/>
+              </svg>
+              <span class="section-doctors__btn-text">Фильтры</span>
+            </button>
+          </div>
+          <div class="section-doctors__tabs__nav">
+            <button class="section-doctors__tabs__btn section-doctors__tabs__btn_active">По популярности</button>
+            <button class="section-doctors__tabs__btn">По рейтингу
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.75 7.28809L9 2.25028L14.25 7.28809" stroke="#676767"/>
+                <line x1="9.20703" y1="2.52917" x2="9.20703" y2="15.829" stroke="#676767"/>
+              </svg>
+            </button>
+            <button class="section-doctors__tabs__btn">По цене
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.75 7.28809L9 2.25028L14.25 7.28809" stroke="#676767"/>
+                <line x1="9.20703" y1="2.52917" x2="9.20703" y2="15.829" stroke="#676767"/>
+              </svg>
+            </button>
+            <button class="section-doctors__tabs__btn">По стажу
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.75 7.28809L9 2.25028L14.25 7.28809" stroke="#676767"/>
+                <line x1="9.20703" y1="2.52917" x2="9.20703" y2="15.829" stroke="#676767"/>
+              </svg>
+            </button>
+            <button class="section-doctors__tabs__btn">По количеству отзывов
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.75 7.28809L9 2.25028L14.25 7.28809" stroke="#676767"/>
+                <line x1="9.20703" y1="2.52917" x2="9.20703" y2="15.829" stroke="#676767"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="section-doctors__right">
+          <img class="section-beside__right-map section-doctors__right-map" src="img/map-doc.jpg" alt="Карта">
+          <button class="section-doctors__right-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.0859 3.64563L20.3604 3.64563L20.3604 10.9365" stroke="black"/>
+              <line y1="-0.5" x2="10.1647" y2="-0.5" transform="matrix(-0.70631 0.707903 -0.70631 -0.707903 19.8203 3.43256)" stroke="black"/>
+              <path d="M10.9121 20.355L3.63768 20.355L3.63768 13.0641" stroke="black"/>
+              <line y1="-0.5" x2="10.1647" y2="-0.5" transform="matrix(0.70631 -0.707903 0.70631 0.707903 4.22852 20.4272)" stroke="black"/>
+              </svg>
+            Развернуть карту
+          </button>
+        </div>
+      </div>
+      <div class="section-doctors__tabs__content">
+        <div class="section-doctors__tabs__pane section-doctors__tabs__pane_show">
+          <div class="section-doctors__card">
+            <div class="section-doctors__card-top">
+              <div class="section-doctors__top-left">
+                <div class="section-doctors__count-wrap">
+                  <div class="section-doctors__card-img">
+                    <img class="section-doctors__doc-img" src="img/doc1.jpg" alt="Фото доктора">
+                    <div class="section-doctors__doc-rating">
+                      <img class="section-doctors__rating-star" src="img/star-orange.svg" alt="Рейтинг доктора">
+                      <span class="section-doctors__rating-text">5</span>
+                    </div>
+                  </div>
+                  <div class="section-doctors__card-count card-count__visible">
+                    <div class="section-doctors__year">
+                      <span class="section-doctors__year-number">12</span>
+                      <span class="section-doctors__year-txt">лет&nbsp;опыта</span>
+                    </div>
+                    <div class="section-doctors__review">
+                      <span class="section-doctors__review-number">594</span>
+                      <a href="#" class="section-doctors__review-txt">Отзывы</a>
+                    </div>
+                    <div class="section-doctors__age">
+                      <div class="section-doctors__age-icon">
+                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.9435 11.7513C15.6606 11.7513 18.8345 12.3406 18.8345 14.6988C18.8345 17.0559 15.681 17.6667 11.9435 17.6667C8.22636 17.6667 5.05246 17.0774 5.05246 14.7202C5.05246 12.3621 8.20599 11.7513 11.9435 11.7513ZM17.8867 10.3313C19.3078 10.305 20.8356 10.5001 21.4001 10.6387C22.5961 10.8738 23.3828 11.3538 23.7087 12.0514C23.9842 12.6241 23.9842 13.2885 23.7087 13.8603C23.2102 14.9423 21.6028 15.2896 20.9781 15.3794C20.8491 15.3989 20.7453 15.2867 20.7589 15.1569C21.0781 12.1587 18.5395 10.7372 17.8828 10.4104C17.8547 10.3957 17.8489 10.3733 17.8518 10.3596C17.8537 10.3499 17.8654 10.3343 17.8867 10.3313ZM5.84383 10.3293L6.11143 10.3317C6.13277 10.3346 6.14344 10.3503 6.14538 10.359C6.14829 10.3737 6.14247 10.3951 6.11531 10.4107C5.45764 10.7376 2.9191 12.1591 3.23823 15.1563C3.25181 15.2871 3.14899 15.3983 3.01998 15.3798C2.39529 15.29 0.787963 14.9427 0.289373 13.8607C0.0129174 13.288 0.0129174 12.6245 0.289373 12.0518C0.615299 11.3542 1.40102 10.8742 2.59705 10.6381C3.16257 10.5005 4.68938 10.3054 6.11143 10.3317L5.84383 10.3293ZM11.9435 0.333374C14.4743 0.333374 16.5035 2.3725 16.5035 4.91896C16.5035 7.46445 14.4743 9.50553 11.9435 9.50553C9.4127 9.50553 7.38342 7.46445 7.38342 4.91896C7.38342 2.3725 9.4127 0.333374 11.9435 0.333374ZM18.134 1.09809C20.5785 1.09809 22.4982 3.41138 21.8444 5.98809C21.403 7.72281 19.8054 8.87506 18.0254 8.82823C17.8469 8.82335 17.6713 8.80676 17.5016 8.77749C17.3784 8.75603 17.3163 8.61651 17.3862 8.51309C18.0652 7.50816 18.4522 6.29932 18.4522 5.0017C18.4522 3.64749 18.0293 2.38499 17.295 1.34981C17.2717 1.31762 17.2542 1.26786 17.2775 1.23078C17.2969 1.20054 17.3328 1.18493 17.3668 1.17712C17.6141 1.12639 17.8683 1.09809 18.134 1.09809ZM5.86262 1.098C6.12841 1.098 6.38255 1.12629 6.63088 1.17702C6.66386 1.18483 6.70072 1.20142 6.72012 1.23069C6.74243 1.26776 6.72594 1.31752 6.70266 1.34972C5.96835 2.38489 5.54542 3.64739 5.54542 5.0016C5.54542 6.29923 5.93246 7.50806 6.61148 8.51299C6.68132 8.61641 6.61924 8.75593 6.49604 8.7774C6.32532 8.80764 6.15072 8.82325 5.97223 8.82813C4.19225 8.87496 2.59462 7.72271 2.15327 5.98799C1.4985 3.41128 3.41817 1.098 5.86262 1.098Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <span class="section-doctors__age-txt">Взрослые</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-doctors__card-content">
+                  <h3 class="section-doctors__card-heading">Царук Евгений Григорьевич</h3>
+                  <div class="section-doctors__card-subtitle">
+                    <span class="section-doctors__subtitle-up">Психиатр-нарколог, Психиатр Нарколог, Психолог</span>
+                    <span class="section-doctors__subtitle-down">Врач высшей категории</span>
+                  </div>
+                  <div class="section-doctors__card-count card-count__hidden">
+                    <div class="section-doctors__year">
+                      <span class="section-doctors__year-number">12</span>
+                      <span class="section-doctors__year-txt">лет&nbsp;опыта</span>
+                    </div>
+                    <div class="section-doctors__review">
+                      <span class="section-doctors__review-number">594</span>
+                      <a href="#" class="section-doctors__review-txt">Отзывы</a>
+                    </div>
+                    <div class="section-doctors__age">
+                      <div class="section-doctors__age-icon">
+                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.9435 11.7513C15.6606 11.7513 18.8345 12.3406 18.8345 14.6988C18.8345 17.0559 15.681 17.6667 11.9435 17.6667C8.22636 17.6667 5.05246 17.0774 5.05246 14.7202C5.05246 12.3621 8.20599 11.7513 11.9435 11.7513ZM17.8867 10.3313C19.3078 10.305 20.8356 10.5001 21.4001 10.6387C22.5961 10.8738 23.3828 11.3538 23.7087 12.0514C23.9842 12.6241 23.9842 13.2885 23.7087 13.8603C23.2102 14.9423 21.6028 15.2896 20.9781 15.3794C20.8491 15.3989 20.7453 15.2867 20.7589 15.1569C21.0781 12.1587 18.5395 10.7372 17.8828 10.4104C17.8547 10.3957 17.8489 10.3733 17.8518 10.3596C17.8537 10.3499 17.8654 10.3343 17.8867 10.3313ZM5.84383 10.3293L6.11143 10.3317C6.13277 10.3346 6.14344 10.3503 6.14538 10.359C6.14829 10.3737 6.14247 10.3951 6.11531 10.4107C5.45764 10.7376 2.9191 12.1591 3.23823 15.1563C3.25181 15.2871 3.14899 15.3983 3.01998 15.3798C2.39529 15.29 0.787963 14.9427 0.289373 13.8607C0.0129174 13.288 0.0129174 12.6245 0.289373 12.0518C0.615299 11.3542 1.40102 10.8742 2.59705 10.6381C3.16257 10.5005 4.68938 10.3054 6.11143 10.3317L5.84383 10.3293ZM11.9435 0.333374C14.4743 0.333374 16.5035 2.3725 16.5035 4.91896C16.5035 7.46445 14.4743 9.50553 11.9435 9.50553C9.4127 9.50553 7.38342 7.46445 7.38342 4.91896C7.38342 2.3725 9.4127 0.333374 11.9435 0.333374ZM18.134 1.09809C20.5785 1.09809 22.4982 3.41138 21.8444 5.98809C21.403 7.72281 19.8054 8.87506 18.0254 8.82823C17.8469 8.82335 17.6713 8.80676 17.5016 8.77749C17.3784 8.75603 17.3163 8.61651 17.3862 8.51309C18.0652 7.50816 18.4522 6.29932 18.4522 5.0017C18.4522 3.64749 18.0293 2.38499 17.295 1.34981C17.2717 1.31762 17.2542 1.26786 17.2775 1.23078C17.2969 1.20054 17.3328 1.18493 17.3668 1.17712C17.6141 1.12639 17.8683 1.09809 18.134 1.09809ZM5.86262 1.098C6.12841 1.098 6.38255 1.12629 6.63088 1.17702C6.66386 1.18483 6.70072 1.20142 6.72012 1.23069C6.74243 1.26776 6.72594 1.31752 6.70266 1.34972C5.96835 2.38489 5.54542 3.64739 5.54542 5.0016C5.54542 6.29923 5.93246 7.50806 6.61148 8.51299C6.68132 8.61641 6.61924 8.75593 6.49604 8.7774C6.32532 8.80764 6.15072 8.82325 5.97223 8.82813C4.19225 8.87496 2.59462 7.72271 2.15327 5.98799C1.4985 3.41128 3.41817 1.098 5.86262 1.098Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <span class="section-doctors__age-txt">Взрослые</span>
+                    </div>
+                  </div>
+                  <p class="section-doctors__card-descr">Занимается эффективным лечением нарушения работоспособности, депрессивных состояний, синдрома хронической усталости, страхов, тревоги, апатии и вялости, нарушением сна, шизофрении, психических расстройств у лиц пожилого и старческого возраста. Лечебно-профилактическая работа среди пациентов психиатрического, наркологического профилей. первичный осмотр пациента, установка предварительного диагноза, назначение лечения, с дальнейшим подбором поддерживающего лечения. Также, ведет прием на английском языке</p>
+                </div>
+              </div>
+              <div class="section-doctors__top-right">
+                <span class="section-doctors__right-subtitle">Время работы</span>
+                <div class="section-doctors__btns">
+                  <button class="sw-btn section-doctors__btn-left">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.5 10C0.5 15.2467 4.75329 19.5 10 19.5C15.2467 19.5 19.5 15.2467 19.5 10C19.5 4.75329 15.2467 0.5 10 0.5C4.75329 0.5 0.5 4.75329 0.5 10Z" fill="white" stroke="#DDDDDD"/>
+                      <path d="M11.75 5.91663L7.68815 9.97848L11.75 14.0403" stroke="#019B83"/>
+                    </svg>
+                  </button>
+                  <button class="sw-btn section-doctors__btn-right">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.5 10C19.5 15.2467 15.2467 19.5 10 19.5C4.75329 19.5 0.5 15.2467 0.5 10C0.5 4.75329 4.75329 0.5 10 0.5C15.2467 0.5 19.5 4.75329 19.5 10Z" fill="white" stroke="#DDDDDD"/>
+                      <path d="M8.25 5.91663L12.3119 9.97848L8.25 14.0403" stroke="#019B83"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="swiper section-doctors__swiper">
+                  <div class="swiper-wrapper">  
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Вт</span>
+                      <span class="section-doctors__slide-number">06</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Ср</span>
+                      <span class="section-doctors__slide-number">07</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Чт</span>
+                      <span class="section-doctors__slide-number">08</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Пн</span>
+                      <span class="section-doctors__slide-number">05</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-doctors__time">
+                  <input class="section-doctors__time-input" type="number" placeholder="06:00">
+                  <span class="section-doctors__time-line"></span>
+                  <input class="section-doctors__time-input" type="number" placeholder="20:00">
+                </div>
+                <button class="section-doctors__btn" id="btn__app">Записаться</button>
+              </div>
+            </div>
+            <div class="section-doctors__card-bottom">
+              <h4 class="section-doctors__bottom-heading">Многопрофильный комплекс психиатрии и наркологии</h4>
+              <p class="section-doctors__bottom-descr">Занимается эффективным лечением нарушения работоспособности, депрессивных состояний, синдрома хронической усталости, страхов, тревоги, апатии и вялости, нарушением сна, шизофрении, психических расстройств у лиц пожилого и старческого возраста. Лечебно-профилактическая работа среди пациентов психиатрического, наркологического профилей. первичный осмотр пациента, установка предварительного диагноза, назначение лечения, с дальнейшим подбором поддерживающего лечения. Также, ведет прием на английском языке</p>
+              <div class="section-doctors__bottom-location">
+                <div class="section-doctors__grid-bottom">
+                  <div class="section-doctors__location-wrap">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.89471 20.5044V17.1919C7.89471 16.3463 8.58522 15.6608 9.437 15.6608H12.5507C12.9597 15.6608 13.352 15.8221 13.6413 16.1092C13.9305 16.3964 14.093 16.7858 14.093 17.1919V20.5044C14.0904 20.856 14.2293 21.194 14.4788 21.4435C14.7283 21.693 15.0678 21.8333 15.4219 21.8333H17.5462C18.5383 21.8358 19.4907 21.4464 20.1931 20.7508C20.8956 20.0553 21.2904 19.1109 21.2904 18.1259V8.68906C21.2904 7.89346 20.9351 7.13879 20.3204 6.62835L13.0939 0.898817C11.8368 -0.105766 10.0357 -0.0733301 8.8162 0.975853L1.75463 6.62835C1.11083 7.12374 0.726046 7.88065 0.707031 8.68906V18.1163C0.707031 20.1691 2.38336 21.8333 4.45122 21.8333H6.52701C7.26253 21.8333 7.86028 21.2442 7.86561 20.514L7.89471 20.5044Z" fill="#019B83"/>
+                    </svg>
+                    <span>Вызов на дом</span>
+                  </div>
+                  <div class="section-doctors__location-wrap">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="24" height="24" fill="#F9F9F9"/>
+                      <path d="M22 11C22 16.5228 12 24 12 24C12 24 2 16.5228 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="#019B83"/>
+                      <circle cx="12" cy="11" r="3" stroke="#019B83"/>
+                    </svg>
+                    <span>ул. Улица</span>
+                  </div>
+                  <span class="section-doctors__town">Район</span>
+                  <span class="section-doctors__town">г. Город</span>
+                </div>
+                <a class="section-doctors__bottom-link" href="#">на карте</a>
+                <span class="section-doctors__bottom-price">14000 &#8381;</span>
+              </div>
+            </div>
+          </div>
+          <div class="section-doctors__card card__hidden">
+            <div class="section-doctors__card-top">
+              <div class="section-doctors__top-left">
+                <div class="section-doctors__count-wrap">
+                  <div class="section-doctors__card-img">
+                    <img class="section-doctors__doc-img" src="img/doc1.jpg" alt="Фото доктора">
+                    <div class="section-doctors__doc-rating">
+                      <img class="section-doctors__rating-star" src="img/star-orange.svg" alt="Рейтинг доктора">
+                      <span class="section-doctors__rating-text">5</span>
+                    </div>
+                  </div>
+                  <div class="section-doctors__card-count card-count__visible">
+                    <div class="section-doctors__year">
+                      <span class="section-doctors__year-number">12</span>
+                      <span class="section-doctors__year-txt">лет&nbsp;опыта</span>
+                    </div>
+                    <div class="section-doctors__review">
+                      <span class="section-doctors__review-number">594</span>
+                      <a href="#" class="section-doctors__review-txt">Отзывы</a>
+                    </div>
+                    <div class="section-doctors__age">
+                      <div class="section-doctors__age-icon">
+                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.9435 11.7513C15.6606 11.7513 18.8345 12.3406 18.8345 14.6988C18.8345 17.0559 15.681 17.6667 11.9435 17.6667C8.22636 17.6667 5.05246 17.0774 5.05246 14.7202C5.05246 12.3621 8.20599 11.7513 11.9435 11.7513ZM17.8867 10.3313C19.3078 10.305 20.8356 10.5001 21.4001 10.6387C22.5961 10.8738 23.3828 11.3538 23.7087 12.0514C23.9842 12.6241 23.9842 13.2885 23.7087 13.8603C23.2102 14.9423 21.6028 15.2896 20.9781 15.3794C20.8491 15.3989 20.7453 15.2867 20.7589 15.1569C21.0781 12.1587 18.5395 10.7372 17.8828 10.4104C17.8547 10.3957 17.8489 10.3733 17.8518 10.3596C17.8537 10.3499 17.8654 10.3343 17.8867 10.3313ZM5.84383 10.3293L6.11143 10.3317C6.13277 10.3346 6.14344 10.3503 6.14538 10.359C6.14829 10.3737 6.14247 10.3951 6.11531 10.4107C5.45764 10.7376 2.9191 12.1591 3.23823 15.1563C3.25181 15.2871 3.14899 15.3983 3.01998 15.3798C2.39529 15.29 0.787963 14.9427 0.289373 13.8607C0.0129174 13.288 0.0129174 12.6245 0.289373 12.0518C0.615299 11.3542 1.40102 10.8742 2.59705 10.6381C3.16257 10.5005 4.68938 10.3054 6.11143 10.3317L5.84383 10.3293ZM11.9435 0.333374C14.4743 0.333374 16.5035 2.3725 16.5035 4.91896C16.5035 7.46445 14.4743 9.50553 11.9435 9.50553C9.4127 9.50553 7.38342 7.46445 7.38342 4.91896C7.38342 2.3725 9.4127 0.333374 11.9435 0.333374ZM18.134 1.09809C20.5785 1.09809 22.4982 3.41138 21.8444 5.98809C21.403 7.72281 19.8054 8.87506 18.0254 8.82823C17.8469 8.82335 17.6713 8.80676 17.5016 8.77749C17.3784 8.75603 17.3163 8.61651 17.3862 8.51309C18.0652 7.50816 18.4522 6.29932 18.4522 5.0017C18.4522 3.64749 18.0293 2.38499 17.295 1.34981C17.2717 1.31762 17.2542 1.26786 17.2775 1.23078C17.2969 1.20054 17.3328 1.18493 17.3668 1.17712C17.6141 1.12639 17.8683 1.09809 18.134 1.09809ZM5.86262 1.098C6.12841 1.098 6.38255 1.12629 6.63088 1.17702C6.66386 1.18483 6.70072 1.20142 6.72012 1.23069C6.74243 1.26776 6.72594 1.31752 6.70266 1.34972C5.96835 2.38489 5.54542 3.64739 5.54542 5.0016C5.54542 6.29923 5.93246 7.50806 6.61148 8.51299C6.68132 8.61641 6.61924 8.75593 6.49604 8.7774C6.32532 8.80764 6.15072 8.82325 5.97223 8.82813C4.19225 8.87496 2.59462 7.72271 2.15327 5.98799C1.4985 3.41128 3.41817 1.098 5.86262 1.098Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <span class="section-doctors__age-txt">Взрослые</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-doctors__card-content">
+                  <h3 class="section-doctors__card-heading">Царук Евгений Григорьевич</h3>
+                  <div class="section-doctors__card-subtitle">
+                    <span class="section-doctors__subtitle-up">Психиатр-нарколог, Психиатр Нарколог, Психолог</span>
+                    <span class="section-doctors__subtitle-down">Врач высшей категории</span>
+                  </div>
+                  <div class="section-doctors__card-count card-count__hidden">
+                    <div class="section-doctors__year">
+                      <span class="section-doctors__year-number">12</span>
+                      <span class="section-doctors__year-txt">лет&nbsp;опыта</span>
+                    </div>
+                    <div class="section-doctors__review">
+                      <span class="section-doctors__review-number">594</span>
+                      <a href="#" class="section-doctors__review-txt">Отзывы</a>
+                    </div>
+                    <div class="section-doctors__age">
+                      <div class="section-doctors__age-icon">
+                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.9435 11.7513C15.6606 11.7513 18.8345 12.3406 18.8345 14.6988C18.8345 17.0559 15.681 17.6667 11.9435 17.6667C8.22636 17.6667 5.05246 17.0774 5.05246 14.7202C5.05246 12.3621 8.20599 11.7513 11.9435 11.7513ZM17.8867 10.3313C19.3078 10.305 20.8356 10.5001 21.4001 10.6387C22.5961 10.8738 23.3828 11.3538 23.7087 12.0514C23.9842 12.6241 23.9842 13.2885 23.7087 13.8603C23.2102 14.9423 21.6028 15.2896 20.9781 15.3794C20.8491 15.3989 20.7453 15.2867 20.7589 15.1569C21.0781 12.1587 18.5395 10.7372 17.8828 10.4104C17.8547 10.3957 17.8489 10.3733 17.8518 10.3596C17.8537 10.3499 17.8654 10.3343 17.8867 10.3313ZM5.84383 10.3293L6.11143 10.3317C6.13277 10.3346 6.14344 10.3503 6.14538 10.359C6.14829 10.3737 6.14247 10.3951 6.11531 10.4107C5.45764 10.7376 2.9191 12.1591 3.23823 15.1563C3.25181 15.2871 3.14899 15.3983 3.01998 15.3798C2.39529 15.29 0.787963 14.9427 0.289373 13.8607C0.0129174 13.288 0.0129174 12.6245 0.289373 12.0518C0.615299 11.3542 1.40102 10.8742 2.59705 10.6381C3.16257 10.5005 4.68938 10.3054 6.11143 10.3317L5.84383 10.3293ZM11.9435 0.333374C14.4743 0.333374 16.5035 2.3725 16.5035 4.91896C16.5035 7.46445 14.4743 9.50553 11.9435 9.50553C9.4127 9.50553 7.38342 7.46445 7.38342 4.91896C7.38342 2.3725 9.4127 0.333374 11.9435 0.333374ZM18.134 1.09809C20.5785 1.09809 22.4982 3.41138 21.8444 5.98809C21.403 7.72281 19.8054 8.87506 18.0254 8.82823C17.8469 8.82335 17.6713 8.80676 17.5016 8.77749C17.3784 8.75603 17.3163 8.61651 17.3862 8.51309C18.0652 7.50816 18.4522 6.29932 18.4522 5.0017C18.4522 3.64749 18.0293 2.38499 17.295 1.34981C17.2717 1.31762 17.2542 1.26786 17.2775 1.23078C17.2969 1.20054 17.3328 1.18493 17.3668 1.17712C17.6141 1.12639 17.8683 1.09809 18.134 1.09809ZM5.86262 1.098C6.12841 1.098 6.38255 1.12629 6.63088 1.17702C6.66386 1.18483 6.70072 1.20142 6.72012 1.23069C6.74243 1.26776 6.72594 1.31752 6.70266 1.34972C5.96835 2.38489 5.54542 3.64739 5.54542 5.0016C5.54542 6.29923 5.93246 7.50806 6.61148 8.51299C6.68132 8.61641 6.61924 8.75593 6.49604 8.7774C6.32532 8.80764 6.15072 8.82325 5.97223 8.82813C4.19225 8.87496 2.59462 7.72271 2.15327 5.98799C1.4985 3.41128 3.41817 1.098 5.86262 1.098Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <span class="section-doctors__age-txt">Взрослые</span>
+                    </div>
+                  </div>
+                  <p class="section-doctors__card-descr">Занимается эффективным лечением нарушения работоспособности, депрессивных состояний, синдрома хронической усталости, страхов, тревоги, апатии и вялости, нарушением сна, шизофрении, психических расстройств у лиц пожилого и старческого возраста. Лечебно-профилактическая работа среди пациентов психиатрического, наркологического профилей. первичный осмотр пациента, установка предварительного диагноза, назначение лечения, с дальнейшим подбором поддерживающего лечения. Также, ведет прием на английском языке</p>
+                </div>
+              </div>
+              <div class="section-doctors__top-right">
+                <span class="section-doctors__right-subtitle">Время работы</span>
+                <div class="section-doctors__btns">
+                  <button class="sw-btn section-doctors__btn-left">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.5 10C0.5 15.2467 4.75329 19.5 10 19.5C15.2467 19.5 19.5 15.2467 19.5 10C19.5 4.75329 15.2467 0.5 10 0.5C4.75329 0.5 0.5 4.75329 0.5 10Z" fill="white" stroke="#DDDDDD"/>
+                      <path d="M11.75 5.91663L7.68815 9.97848L11.75 14.0403" stroke="#019B83"/>
+                    </svg>
+                  </button>
+                  <button class="sw-btn section-doctors__btn-right">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.5 10C19.5 15.2467 15.2467 19.5 10 19.5C4.75329 19.5 0.5 15.2467 0.5 10C0.5 4.75329 4.75329 0.5 10 0.5C15.2467 0.5 19.5 4.75329 19.5 10Z" fill="white" stroke="#DDDDDD"/>
+                      <path d="M8.25 5.91663L12.3119 9.97848L8.25 14.0403" stroke="#019B83"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="swiper section-doctors__swiper">
+                  <div class="swiper-wrapper">  
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Пн</span>
+                      <span class="section-doctors__slide-number">05</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Вт</span>
+                      <span class="section-doctors__slide-number">06</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Ср</span>
+                      <span class="section-doctors__slide-number">07</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Чт</span>
+                      <span class="section-doctors__slide-number">08</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-doctors__time">
+                  <input class="section-doctors__time-input" type="number" placeholder="06:00">
+                  <span class="section-doctors__time-line"></span>
+                  <input class="section-doctors__time-input" type="number" placeholder="20:00">
+                </div>
+                <button class="section-doctors__btn" id="btn__app-2">Записаться</button>
+              </div>
+            </div>
+            <div class="section-doctors__card-bottom">
+              <h4 class="section-doctors__bottom-heading">Многопрофильный комплекс психиатрии и наркологии</h4>
+              <p class="section-doctors__bottom-descr">Занимается эффективным лечением нарушения работоспособности, депрессивных состояний, синдрома хронической усталости, страхов, тревоги, апатии и вялости, нарушением сна, шизофрении, психических расстройств у лиц пожилого и старческого возраста. Лечебно-профилактическая работа среди пациентов психиатрического, наркологического профилей. первичный осмотр пациента, установка предварительного диагноза, назначение лечения, с дальнейшим подбором поддерживающего лечения. Также, ведет прием на английском языке</p>
+              <div class="section-doctors__bottom-location">
+                <div class="section-doctors__grid-bottom">
+                  <div class="section-doctors__location-wrap">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.89471 20.5044V17.1919C7.89471 16.3463 8.58522 15.6608 9.437 15.6608H12.5507C12.9597 15.6608 13.352 15.8221 13.6413 16.1092C13.9305 16.3964 14.093 16.7858 14.093 17.1919V20.5044C14.0904 20.856 14.2293 21.194 14.4788 21.4435C14.7283 21.693 15.0678 21.8333 15.4219 21.8333H17.5462C18.5383 21.8358 19.4907 21.4464 20.1931 20.7508C20.8956 20.0553 21.2904 19.1109 21.2904 18.1259V8.68906C21.2904 7.89346 20.9351 7.13879 20.3204 6.62835L13.0939 0.898817C11.8368 -0.105766 10.0357 -0.0733301 8.8162 0.975853L1.75463 6.62835C1.11083 7.12374 0.726046 7.88065 0.707031 8.68906V18.1163C0.707031 20.1691 2.38336 21.8333 4.45122 21.8333H6.52701C7.26253 21.8333 7.86028 21.2442 7.86561 20.514L7.89471 20.5044Z" fill="#019B83"/>
+                    </svg>
+                    <span>Вызов на дом</span>
+                  </div>
+                  <div class="section-doctors__location-wrap">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="24" height="24" fill="#F9F9F9"/>
+                      <path d="M22 11C22 16.5228 12 24 12 24C12 24 2 16.5228 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="#019B83"/>
+                      <circle cx="12" cy="11" r="3" stroke="#019B83"/>
+                    </svg>
+                    <span>ул. Улица</span>
+                  </div>
+                  <span class="section-doctors__town">Район</span>
+                  <span class="section-doctors__town">г. Город</span>
+                </div>
+                <a class="section-doctors__bottom-link" href="#">на карте</a>
+                <span class="section-doctors__bottom-price">14000 &#8381;</span>
+              </div>
+            </div>
+          </div>
+          <div class="section-doctors__card section-doctors__card-last">
+            <div class="section-doctors__card-top">
+              <div class="section-doctors__top-left">
+                <div class="section-doctors__count-wrap">
+                  <div class="section-doctors__card-img">
+                    <img class="section-doctors__doc-img" src="img/doc1.jpg" alt="Фото доктора">
+                    <div class="section-doctors__doc-rating">
+                      <img class="section-doctors__rating-star" src="img/star-orange.svg" alt="Рейтинг доктора">
+                      <span class="section-doctors__rating-text">5</span>
+                    </div>
+                  </div>
+                  <div class="section-doctors__card-count card-count__visible">
+                    <div class="section-doctors__year">
+                      <span class="section-doctors__year-number">12</span>
+                      <span class="section-doctors__year-txt">лет&nbsp;опыта</span>
+                    </div>
+                    <div class="section-doctors__review">
+                      <span class="section-doctors__review-number">594</span>
+                      <a href="#" class="section-doctors__review-txt">Отзывы</a>
+                    </div>
+                    <div class="section-doctors__age">
+                      <div class="section-doctors__age-icon">
+                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.9435 11.7513C15.6606 11.7513 18.8345 12.3406 18.8345 14.6988C18.8345 17.0559 15.681 17.6667 11.9435 17.6667C8.22636 17.6667 5.05246 17.0774 5.05246 14.7202C5.05246 12.3621 8.20599 11.7513 11.9435 11.7513ZM17.8867 10.3313C19.3078 10.305 20.8356 10.5001 21.4001 10.6387C22.5961 10.8738 23.3828 11.3538 23.7087 12.0514C23.9842 12.6241 23.9842 13.2885 23.7087 13.8603C23.2102 14.9423 21.6028 15.2896 20.9781 15.3794C20.8491 15.3989 20.7453 15.2867 20.7589 15.1569C21.0781 12.1587 18.5395 10.7372 17.8828 10.4104C17.8547 10.3957 17.8489 10.3733 17.8518 10.3596C17.8537 10.3499 17.8654 10.3343 17.8867 10.3313ZM5.84383 10.3293L6.11143 10.3317C6.13277 10.3346 6.14344 10.3503 6.14538 10.359C6.14829 10.3737 6.14247 10.3951 6.11531 10.4107C5.45764 10.7376 2.9191 12.1591 3.23823 15.1563C3.25181 15.2871 3.14899 15.3983 3.01998 15.3798C2.39529 15.29 0.787963 14.9427 0.289373 13.8607C0.0129174 13.288 0.0129174 12.6245 0.289373 12.0518C0.615299 11.3542 1.40102 10.8742 2.59705 10.6381C3.16257 10.5005 4.68938 10.3054 6.11143 10.3317L5.84383 10.3293ZM11.9435 0.333374C14.4743 0.333374 16.5035 2.3725 16.5035 4.91896C16.5035 7.46445 14.4743 9.50553 11.9435 9.50553C9.4127 9.50553 7.38342 7.46445 7.38342 4.91896C7.38342 2.3725 9.4127 0.333374 11.9435 0.333374ZM18.134 1.09809C20.5785 1.09809 22.4982 3.41138 21.8444 5.98809C21.403 7.72281 19.8054 8.87506 18.0254 8.82823C17.8469 8.82335 17.6713 8.80676 17.5016 8.77749C17.3784 8.75603 17.3163 8.61651 17.3862 8.51309C18.0652 7.50816 18.4522 6.29932 18.4522 5.0017C18.4522 3.64749 18.0293 2.38499 17.295 1.34981C17.2717 1.31762 17.2542 1.26786 17.2775 1.23078C17.2969 1.20054 17.3328 1.18493 17.3668 1.17712C17.6141 1.12639 17.8683 1.09809 18.134 1.09809ZM5.86262 1.098C6.12841 1.098 6.38255 1.12629 6.63088 1.17702C6.66386 1.18483 6.70072 1.20142 6.72012 1.23069C6.74243 1.26776 6.72594 1.31752 6.70266 1.34972C5.96835 2.38489 5.54542 3.64739 5.54542 5.0016C5.54542 6.29923 5.93246 7.50806 6.61148 8.51299C6.68132 8.61641 6.61924 8.75593 6.49604 8.7774C6.32532 8.80764 6.15072 8.82325 5.97223 8.82813C4.19225 8.87496 2.59462 7.72271 2.15327 5.98799C1.4985 3.41128 3.41817 1.098 5.86262 1.098Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <span class="section-doctors__age-txt">Взрослые</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-doctors__card-content">
+                  <h3 class="section-doctors__card-heading">Царук Евгений Григорьевич</h3>
+                  <div class="section-doctors__card-subtitle">
+                    <span class="section-doctors__subtitle-up">Психиатр-нарколог, Психиатр Нарколог, Психолог</span>
+                    <span class="section-doctors__subtitle-down">Врач высшей категории</span>
+                  </div>
+                  <div class="section-doctors__card-count card-count__hidden">
+                    <div class="section-doctors__year">
+                      <span class="section-doctors__year-number">12</span>
+                      <span class="section-doctors__year-txt">лет&nbsp;опыта</span>
+                    </div>
+                    <div class="section-doctors__review">
+                      <span class="section-doctors__review-number">594</span>
+                      <a href="#" class="section-doctors__review-txt">Отзывы</a>
+                    </div>
+                    <div class="section-doctors__age">
+                      <div class="section-doctors__age-icon">
+                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.9435 11.7513C15.6606 11.7513 18.8345 12.3406 18.8345 14.6988C18.8345 17.0559 15.681 17.6667 11.9435 17.6667C8.22636 17.6667 5.05246 17.0774 5.05246 14.7202C5.05246 12.3621 8.20599 11.7513 11.9435 11.7513ZM17.8867 10.3313C19.3078 10.305 20.8356 10.5001 21.4001 10.6387C22.5961 10.8738 23.3828 11.3538 23.7087 12.0514C23.9842 12.6241 23.9842 13.2885 23.7087 13.8603C23.2102 14.9423 21.6028 15.2896 20.9781 15.3794C20.8491 15.3989 20.7453 15.2867 20.7589 15.1569C21.0781 12.1587 18.5395 10.7372 17.8828 10.4104C17.8547 10.3957 17.8489 10.3733 17.8518 10.3596C17.8537 10.3499 17.8654 10.3343 17.8867 10.3313ZM5.84383 10.3293L6.11143 10.3317C6.13277 10.3346 6.14344 10.3503 6.14538 10.359C6.14829 10.3737 6.14247 10.3951 6.11531 10.4107C5.45764 10.7376 2.9191 12.1591 3.23823 15.1563C3.25181 15.2871 3.14899 15.3983 3.01998 15.3798C2.39529 15.29 0.787963 14.9427 0.289373 13.8607C0.0129174 13.288 0.0129174 12.6245 0.289373 12.0518C0.615299 11.3542 1.40102 10.8742 2.59705 10.6381C3.16257 10.5005 4.68938 10.3054 6.11143 10.3317L5.84383 10.3293ZM11.9435 0.333374C14.4743 0.333374 16.5035 2.3725 16.5035 4.91896C16.5035 7.46445 14.4743 9.50553 11.9435 9.50553C9.4127 9.50553 7.38342 7.46445 7.38342 4.91896C7.38342 2.3725 9.4127 0.333374 11.9435 0.333374ZM18.134 1.09809C20.5785 1.09809 22.4982 3.41138 21.8444 5.98809C21.403 7.72281 19.8054 8.87506 18.0254 8.82823C17.8469 8.82335 17.6713 8.80676 17.5016 8.77749C17.3784 8.75603 17.3163 8.61651 17.3862 8.51309C18.0652 7.50816 18.4522 6.29932 18.4522 5.0017C18.4522 3.64749 18.0293 2.38499 17.295 1.34981C17.2717 1.31762 17.2542 1.26786 17.2775 1.23078C17.2969 1.20054 17.3328 1.18493 17.3668 1.17712C17.6141 1.12639 17.8683 1.09809 18.134 1.09809ZM5.86262 1.098C6.12841 1.098 6.38255 1.12629 6.63088 1.17702C6.66386 1.18483 6.70072 1.20142 6.72012 1.23069C6.74243 1.26776 6.72594 1.31752 6.70266 1.34972C5.96835 2.38489 5.54542 3.64739 5.54542 5.0016C5.54542 6.29923 5.93246 7.50806 6.61148 8.51299C6.68132 8.61641 6.61924 8.75593 6.49604 8.7774C6.32532 8.80764 6.15072 8.82325 5.97223 8.82813C4.19225 8.87496 2.59462 7.72271 2.15327 5.98799C1.4985 3.41128 3.41817 1.098 5.86262 1.098Z" fill="white"/>
+                          </svg>
+                      </div>
+                      <span class="section-doctors__age-txt">Взрослые</span>
+                    </div>
+                  </div>
+                  <p class="section-doctors__card-descr">Занимается эффективным лечением нарушения работоспособности, депрессивных состояний, синдрома хронической усталости, страхов, тревоги, апатии и вялости, нарушением сна, шизофрении, психических расстройств у лиц пожилого и старческого возраста. Лечебно-профилактическая работа среди пациентов психиатрического, наркологического профилей. первичный осмотр пациента, установка предварительного диагноза, назначение лечения, с дальнейшим подбором поддерживающего лечения. Также, ведет прием на английском языке</p>
+                </div>
+              </div>
+              <div class="section-doctors__top-right">
+                <span class="section-doctors__right-subtitle">Время работы</span>
+                <div class="section-doctors__btns">
+                  <button class="sw-btn section-doctors__btn-left">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.5 10C0.5 15.2467 4.75329 19.5 10 19.5C15.2467 19.5 19.5 15.2467 19.5 10C19.5 4.75329 15.2467 0.5 10 0.5C4.75329 0.5 0.5 4.75329 0.5 10Z" fill="white" stroke="#DDDDDD"/>
+                      <path d="M11.75 5.91663L7.68815 9.97848L11.75 14.0403" stroke="#019B83"/>
+                    </svg>
+                  </button>
+                  <button class="sw-btn section-doctors__btn-right">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.5 10C19.5 15.2467 15.2467 19.5 10 19.5C4.75329 19.5 0.5 15.2467 0.5 10C0.5 4.75329 4.75329 0.5 10 0.5C15.2467 0.5 19.5 4.75329 19.5 10Z" fill="white" stroke="#DDDDDD"/>
+                      <path d="M8.25 5.91663L12.3119 9.97848L8.25 14.0403" stroke="#019B83"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="swiper section-doctors__swiper">
+                  <div class="swiper-wrapper">  
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Пн</span>
+                      <span class="section-doctors__slide-number">05</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Вт</span>
+                      <span class="section-doctors__slide-number">06</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Ср</span>
+                      <span class="section-doctors__slide-number">07</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                    <div class="swiper-slide section-doctors__slide">
+                      <span class="section-doctors__slide-day">Чт</span>
+                      <span class="section-doctors__slide-number">08</span>
+                      <span class="section-doctors__slide-month">Декабрь</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-doctors__time">
+                  <input class="section-doctors__time-input" type="number" placeholder="06:00">
+                  <span class="section-doctors__time-line"></span>
+                  <input class="section-doctors__time-input" type="number" placeholder="20:00">
+                </div>
+                <button class="section-doctors__btn" id="btn__app-3">Записаться</button>
+              </div>
+            </div>
+            <div class="section-doctors__card-bottom">
+              <h4 class="section-doctors__bottom-heading">Многопрофильный комплекс психиатрии и наркологии</h4>
+              <p class="section-doctors__bottom-descr">Занимается эффективным лечением нарушения работоспособности, депрессивных состояний, синдрома хронической усталости, страхов, тревоги, апатии и вялости, нарушением сна, шизофрении, психических расстройств у лиц пожилого и старческого возраста. Лечебно-профилактическая работа среди пациентов психиатрического, наркологического профилей. первичный осмотр пациента, установка предварительного диагноза, назначение лечения, с дальнейшим подбором поддерживающего лечения. Также, ведет прием на английском языке</p>
+              <div class="section-doctors__bottom-location">
+                <div class="section-doctors__grid-bottom">
+                  <div class="section-doctors__location-wrap">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.89471 20.5044V17.1919C7.89471 16.3463 8.58522 15.6608 9.437 15.6608H12.5507C12.9597 15.6608 13.352 15.8221 13.6413 16.1092C13.9305 16.3964 14.093 16.7858 14.093 17.1919V20.5044C14.0904 20.856 14.2293 21.194 14.4788 21.4435C14.7283 21.693 15.0678 21.8333 15.4219 21.8333H17.5462C18.5383 21.8358 19.4907 21.4464 20.1931 20.7508C20.8956 20.0553 21.2904 19.1109 21.2904 18.1259V8.68906C21.2904 7.89346 20.9351 7.13879 20.3204 6.62835L13.0939 0.898817C11.8368 -0.105766 10.0357 -0.0733301 8.8162 0.975853L1.75463 6.62835C1.11083 7.12374 0.726046 7.88065 0.707031 8.68906V18.1163C0.707031 20.1691 2.38336 21.8333 4.45122 21.8333H6.52701C7.26253 21.8333 7.86028 21.2442 7.86561 20.514L7.89471 20.5044Z" fill="#019B83"/>
+                    </svg>
+                    <span>Вызов на дом</span>
+                  </div>
+                  <div class="section-doctors__location-wrap">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="24" height="24" fill="#F9F9F9"/>
+                      <path d="M22 11C22 16.5228 12 24 12 24C12 24 2 16.5228 2 11C2 5.47715 6.47715 1 12 1C17.5228 1 22 5.47715 22 11Z" stroke="#019B83"/>
+                      <circle cx="12" cy="11" r="3" stroke="#019B83"/>
+                    </svg>
+                    <span>ул. Улица</span>
+                  </div>
+                  <span class="section-doctors__town">Район</span>
+                  <span class="section-doctors__town">г. Город</span>
+                </div>
+                <a class="section-doctors__bottom-link" href="#">на карте</a>
+                <span class="section-doctors__bottom-price">14000 &#8381;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-actual__btn-wrap">
+          <button class="section-actual__btn">Смотреть больше</button>
+        </div>
+        <div class="section-doctors__tabs__pane" id="content-2">
+          Содержимое 2...
+        </div>
+        <div class="section-doctors__tabs__pane" id="content-3">
+          Содержимое 3...
+        </div>
+        <div class="section-doctors__tabs__pane" id="content-4">
+          Содержимое 4...
+        </div>
+        <div class="section-doctors__tabs__pane" id="content-5">
+          Содержимое 5...
+        </div>
+      </div>
+      <div class="modal container" id="modal__app">
+        <div class="section-doctors__modal-content">
+          <button class="modal__close-btn" id="close-app-btn">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.25 6L19.5565 18.7742" stroke="#2B2A28" stroke-linejoin="round"/>
+              <path d="M6.25 18.7744L19.5565 6.00022" stroke="#2B2A28" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <h2 class="section-doctors__modal-heading heading-h2">Записаться к врачу</h2>
+          <form class="header-up__form" action="#" method="get">
+            <div class="form-wrap">
+              <label class="form-label" for="login">ФИО</label>
+              <input class="form-input" type="text" name="login" id="login" required>
+            </div>
+            <div class="form-wrap">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" name="email" id="email" required>
+            </div>
+            <div class="form-wrap">
+              <label class="form-label" for="phone">Телефон</label>
+              <input class="form-input" type="number" name="phone" id="phone" required>
+            </div>
+            <div class="form-wrap">
+              <label class="form-label" for="commit">Комментарий</label>
+              <input class="form-input form-input__big" type="text" name="commit" id="commit" required>
+            </div>
+            <button class="section-doctors__modal-btn" type="submit">Записаться</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__main container">
+      <a class="footer__logo" href="index.html">
+        <img src="img/logo.png" alt="Логотип">
+      </a>
+      <ul class="footer__list">
+        <li class="footer__item">
+          <h4 class="footer__title">Меню</h4>
+          <nav>
+            <ul>
+              <li><a class="footer__link" href="index.html">Главная&nbsp;+</a></li>
+              <li><a class="footer__link" href="blog.html">Блог&nbsp;+</a></li>
+              <li><a class="footer__link" href="promo.html">Акции&nbsp;+</a></li>
+              <li><a class="footer__link" href="all.html">Аптеки&nbsp;+</a></li>
+              <li><a class="footer__link" href="category.html">Каталог лекарств&nbsp;+</a></li>
+              <li><a class="footer__link" href="doctors.html">Каталог врачей&nbsp;+</a></li>
+              <li><a class="footer__link" href="clinic.html">Каталог клиник&nbsp;+</a></li>
+            </ul>
+          </nav>
+        </li>
+        <li class="footer__item">
+          <h4 class="footer__title">Последние</h4>
+          <nav>
+            <ul>
+              <li><a class="footer__link" href="index.html">Главная&nbsp;+</a></li>
+              <li><a class="footer__link" href="category.html">Каталог лекарств&nbsp;+</a></li>
+            </ul>
+          </nav>
+        </li>
+        <li class="footer__item">
+          <h4 class="footer__title">Партнерам</h4>
+          <nav>
+            <ul>
+              <li><a class="footer__link" href="account-list.html">Личный кабинет партнера&nbsp;+</a></li>
+              <li><a class="footer__link" href="#">Подключение партнера&nbsp;+</a></li>
+              <li><a class="footer__link" href="#">Реклама на сайте&nbsp;+</a></li>
+            </ul>
+          </nav>
+        </li>
+      </ul>
+    </div>
+    <ul class="footer__list-icons">
+      <li class="footer__item-icon">
+        <a class="footer__link-icon footer__link-home" href="index.html"></a>
+      </li>
+      <li class="footer__item-icon">
+        <a class="footer__link-icon footer__link-heart" href="like_product.html"></a>
+      </li>
+      <li class="footer__item-icon">
+        <a class="footer__link-icon footer__link-location" href="contacts.html"></a>
+      </li>
+      <li class="footer__item-icon">
+        <a class="footer__link-icon footer__link-bag" href="basket-1.html"></a>
+      </li>
+      <li class="footer__item-icon">
+        <a class="footer__link-icon footer__link-persona" href="account.html"></a>
+      </li>
+    </ul>
+  </footer>
+</body>
+</html>

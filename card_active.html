@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekapt</title>
+
+  <link rel="preload" href="fonts/Montserrat-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Italic.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="libs/bootstrap.min.css"> 
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/bootstrap.min.js"></script>
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <div class="balance__login-window">
+    <div class="balance__login-content">
+      <button class="balance__btn-close">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.25 6.5L19.5565 19.2742" stroke="#636363" stroke-linejoin="round"/>
+          <path d="M6.25 19.2744L19.5565 6.50022" stroke="#636363" stroke-linejoin="round"/>
+          </svg>
+      </button>
+      <h4 class="balance__heading">Проверка баланса дисконтной карты</h4>
+      <form class="balance__form" action="#" method="get">
+        <div class="form-wrap">
+          <label class="form-label" for="number">Введите номер карты</label>
+          <input class="form-input input-password" type="number" name="number" id="number" placeholder="Введите номер карты" required>
+        </div>
+        <div class="form-wrap">
+          <label class="form-label" for="phone">Введите номер телефона</label>
+          <input class="form-input input-password" type="number" name="phone" id="phone" placeholder="Введите номер телефона" required>
+        </div>
+        <button class="balance__form-btn" type="submit">Проверить</button>
+        <p class="balance__descr">Введите номер телефона, который был указан Вами при получении карты. Если вы не предоставили номер телефона при получении карты или номер изменился, вам необходимо актуализировать его в нашей базе. Обратитесь в ближайшее аптечное заведение-партер или позвоните на горячую линию 0 800 505 911</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="balance__login-window">
+    <div class="balance__login-content">
+      <button class="balance__btn-close">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.25 6.5L19.5565 19.2742" stroke="#636363" stroke-linejoin="round"/>
+          <path d="M6.25 19.2744L19.5565 6.50022" stroke="#636363" stroke-linejoin="round"/>
+          </svg>
+      </button>
+      <h4 class="balance__heading">Активация дисконтной карты</h4>
+      <form class="balance__form" action="#" method="get">
+        <div class="form-wrap">
+          <label class="form-label" for="number">Введите номер карты</label>
+          <input class="form-input input-password" type="number" name="number" id="number" placeholder="Введите номер карты" required>
+        </div>
+        <div class="form-wrap">
+          <label class="form-label" for="phone">Введите номер телефона</label>
+          <input class="form-input input-password" type="number" name="phone" id="phone" placeholder="Введите номер телефона" required>
+        </div>
+        <button class="balance__form-btn" type="submit">Активировать</button>
+        <p class="balance__descr">Введите номер телефона, который был указан Вами при получении карты. Если вы не предоставили номер телефона при получении карты или номер изменился, вам необходимо актуализировать его в нашей базе. Обратитесь в ближайшее аптечное заведение-партер или позвоните на горячую линию 0 800 505 911</p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
